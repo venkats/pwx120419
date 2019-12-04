@@ -13,27 +13,27 @@ const getVoters = require('../src/can-vote').getVoters;
 //it. Continue until all tests are passing.
 
 describe('can vote tests', function() {
-  xit('should return true for an adult', function() {
+  it('should return true for an adult', function() {
     expect(canVote('Jill', 20)).to.be.true;
   });
 
-  xit('should return false for a child', function() {
+  it('should return false for a child', function() {
     expect(canVote('Jake', 12)).to.be.false;
   });
 
-  xit('should return true for just turned 18', function() {
+  it('should return true for just turned 18', function() {
     expect(canVote('Greg', 18)).to.be.true;
   });
 
-  xit('should return false for invalid age', function() {
+  it('should return false for invalid age', function() {
     expect(canVote('Dennis', "@28")).to.be.false;
   });
 
-  xit('should return false for invalid type', function() {
+  it('should return false for invalid type', function() {
     expect(canVote('Sara', "18")).to.be.false;
   });
   
-  xit('should return no voters', function() {
+  it('should return no voters', function() {
     const folks = [
       ['Paul', 10],
       ['Paula', 12],
@@ -42,7 +42,7 @@ describe('can vote tests', function() {
     expect(getVoters(folks)).to.be.eql([]);
   });
 
-  xit('should return one voter', function() {
+  it('should return one voter', function() {
     const folks = [
       ['Paul', 10],
       ['Paula', 22],
@@ -51,7 +51,7 @@ describe('can vote tests', function() {
     expect(getVoters(folks)).to.be.eql(['Paula']);
   });
 
-  xit('should return two voter', function() {
+  it('should return two voter', function() {
     const folks = [
       ['Paul', "10"],
       ['Paula', 22],
